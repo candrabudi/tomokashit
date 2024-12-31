@@ -1,0 +1,1 @@
+import{e$ as c,f0 as i,k as f}from"./index-QJ1DP7so.js";function d(l,r){const{width:u}=c(l),e=i(l,r),s=f(()=>!e.arrivedState.left||!e.arrivedState.right);function n(t){const o=typeof t=="number"?t:r.step||u.value/2;e.x.value-=o}function a(t){const o=typeof t=="number"?t:r.step||u.value/2;e.x.value+=o}return{...e,scrollToLeft:n,scrollToRight:a,isCanBeScroll:s}}export{d as u};

@@ -1,0 +1,1 @@
+import{ex as t,al as r}from"./index-QJ1DP7so.js";function o(a){return t(a)?r(a).format("HH:mm"):r(a).format("MM-DD HH:mm")}export{o as f};

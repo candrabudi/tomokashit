@@ -1,0 +1,1 @@
+import{c0 as e,aP as t,P as r}from"./index-kWXyNMgS.js";function s(a){return e({url:"/uapi/indexBanner/list",method:"post",data:{appType:t.h5,...a}})}function u(){return e({url:"/uapi/visitor/homePageMenu",method:"get",params:{lang:r().userInfo.language}})}export{u as a,s as g};

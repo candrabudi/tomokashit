@@ -1,0 +1,1 @@
+const o="/assets/icon/football_icon.png";export{o as _};

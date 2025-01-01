@@ -2,17 +2,19 @@
 
 namespace App\Helpers;
 
+use App\Models\GeneralSetting;
 use Illuminate\Support\Facades\Http;
 
 class ThirdApi
 {
     public static function createAccount($user_ext)
     {
+        $generalSetting = GeneralSetting::first();
         // Persiapkan data untuk dikirimkan
         $postArray = [
             'method' => 'user_create', 
-            'agent_code' => 'ducduc', 
-            'agent_token' => 'c4648a633d8887d7d4f7bafc3dcfe656',
+            'agent_code' => $generalSetting->agent_code, 
+            'agent_token' => $generalSetting->agent_token,
             'user_code' => $user_ext
         ];
 
@@ -66,10 +68,11 @@ class ThirdApi
     public static function deposit($userCode, $amount, $agentSign = null)
     {
         // Persiapkan data untuk dikirimkan
+        $generalSetting = GeneralSetting::first();
         $postArray = [
             'method' => 'user_deposit',
-            'agent_code' => 'ducduc',
-            'agent_token' => 'c4648a633d8887d7d4f7bafc3dcfe656',
+            'agent_code' => $generalSetting->agent_code,
+            'agent_token' => $generalSetting->agent_token,
             'user_code' => $userCode,
             'amount' => (int)$amount
         ];
@@ -115,10 +118,11 @@ class ThirdApi
 
     public static function withdraw($userCode, $amount, $agentSign = null)
     {
+        $generalSetting = GeneralSetting::first();
         $postArray = [
             'method' => 'user_withdraw',
-            'agent_code' => 'ducduc',
-            'agent_token' => 'c4648a633d8887d7d4f7bafc3dcfe656',
+            'agent_code' => $generalSetting->agent_code,
+            'agent_token' => $generalSetting->agent_token,
             'user_code' => $userCode,
             'amount' => $amount,
             'agent_sign' => $agentSign ?? uniqid('agent_', true),

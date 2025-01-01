@@ -28,7 +28,6 @@
 
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
 
-                <!-- Dashboard Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.dashboard') }}" class="nav-link menu-link"> 
                         <i class="bi bi-speedometer2"></i> 
@@ -36,7 +35,6 @@
                     </a>
                 </li>
 
-                <!-- Payment Menu with Submenus -->
                 <li class="nav-item">
                     <a class="nav-link menu-link collapsed" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
                         <i class="bx bxs-bank"></i> 
@@ -54,7 +52,6 @@
                     </div>
                 </li>
 
-                <!-- Member Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.member') }}" class="nav-link menu-link"> 
                         <i class="bi bi-person-circle"></i> 
@@ -62,7 +59,6 @@
                     </a>
                 </li>
 
-                <!-- Banner Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.banners.index') }}" class="nav-link menu-link"> 
                         <i class="bx bx-image-alt"></i> 
@@ -70,7 +66,6 @@
                     </a>
                 </li>
 
-                <!-- Promotion Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.promotion.index') }}" class="nav-link menu-link"> 
                         <i class="bi bi-gift"></i> 
@@ -78,7 +73,6 @@
                     </a>
                 </li>
 
-                <!-- Transaction Report Menu Item (New) -->
                 <li class="nav-item">
                     <a href="{{ route('system.transaction.report') }}" class="nav-link menu-link"> 
                         <i class="bi bi-file-earmark-text"></i> 
@@ -86,7 +80,6 @@
                     </a>
                 </li>
 
-                <!-- General Settings Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.settings.index') }}" class="nav-link menu-link"> 
                         <i class="bi bi-gear"></i> 
@@ -94,7 +87,6 @@
                     </a>
                 </li>
 
-                <!-- Profile Settings Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.profile.index') }}" class="nav-link menu-link"> 
                         <i class="bi bi-person-gear"></i> 
@@ -102,7 +94,6 @@
                     </a>
                 </li>
 
-                <!-- Users Menu Item -->
                 <li class="nav-item">
                     <a href="{{ route('system.users.management') }}" class="nav-link menu-link"> 
                         <i class="bi bi-person-lines-fill"></i> 

@@ -69,6 +69,7 @@ Route::get('/games/fetch', [FSlotController::class, 'fetchGames'])->name('games.
 
 Route::get('/games', [FSlotController::class, 'getGames']);
 Route::get('/providers', [FSlotController::class, 'getProviders']);
+Route::get('/mine', [FProfileController::class, 'index'])->name('users.profile');
 
 Route::get('/check-auth', function() {
     return response()->json(['isAuthenticated' => auth()->check()]);

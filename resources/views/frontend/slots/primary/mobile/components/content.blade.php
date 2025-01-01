@@ -6,27 +6,26 @@
 <div class="pb-60">
     <div>
         <div class="sticky top-[calc(var(--top-nav-height)+var(--top-notice-height)+109px)] z-8 items-center justify-between bg-[#1E232B] px-8 py-6 text-2xl"
-            style="background: #232A34; color: #FFFFFF; border-bottom: 1px solid #3A3F47; padding: 10px;">
+            style="background: #232A34; color: #FFFFFF; padding: 12px; border-bottom: none;">
             <!-- Provider Filter Dropdown -->
             <div tabindex="-1">
                 <select id="providerFilter"
-                    class="text-xl bg-transparent text-white border border-gray-600 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    style="padding: 10px;" style="background: #232A34; color: #FFFFFF;">
+                    class="text-base bg-transparent text-white rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style="background: #2B323C; color: #FFFFFF; padding: 10px; font-size: 1rem;">
                     <option value="">Semua Provider</option>
                 </select>
             </div>
-
-            <div tabindex="-1" style="margin-top: 15px;">
-                <div class="flex items-center font-bold text-xl text-gray-300 mb-2">
+    
+            <div tabindex="-1" style="margin-top: 16px;">
+                <div class="flex items-center font-semibold text-base text-gray-300 mb-2">
                     <input type="text" id="gameSearch" placeholder="Search Games"
-                        class="text-xl text-white bg-transparent w-full p-3 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        style="padding: 10px;" />
+                        class="text-base text-white bg-transparent w-full rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        style="background: #2B323C; padding: 10px; font-size: 1rem;" />
                 </div>
             </div>
         </div>
-
-
-
+    </div>
+    
         <div style="margin-top: 35px;">
             <div class="relative overflow-hidden bg-body" style="height: 0px;">
                 <div class="absolute bottom-0 w-full">

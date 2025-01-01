@@ -1,5 +1,4 @@
 <html lang="en" class="dark" style="--zsiqf-custom-bg-color: #46dd6b;">
-<plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui>
 
 <head>
     <style id="react-native-stylesheet"></style>
@@ -13,17 +12,31 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="nightmode" content="disable">
     <meta name="color-scheme" content="light">
-    <title>SpotBet</title>
+
+    @php
+        $settings = \App\Models\GeneralSetting::first();
+    @endphp
+
+    <title>{{ $settings->site_title ?? 'SpotBet' }}</title>
+
     <meta name="description"
-        content="Spotbet adalah platform taruhan olahraga online terdepan di Indonesia, menawarkan taruhan waktu nyata dan odds terbaik untuk berbagai pertandingan olahraga seperti Sepak Bola, Bulu Tangkis, Basket, dan Tenis. Pengalaman taruhan yang aman dan terpercaya, mendukung taruhan Liga Utama Inggris, Liga UEFA Champions League, dan Liga 1 Indonesia, cocok untuk semua penggemar olahraga di Indonesia. Bergabunglah sekarang dan nikmati kesenangan taruhan tanpa batas!">
+        content="{{ $settings->site_description ?? 'Spotbet adalah platform taruhan olahraga online terdepan di Indonesia...' }}">
+
     <meta name="keywords"
-        content="Taruhan olahraga Indonesia, taruhan online Indonesia, taruhan sepak bola Indonesia, Spotbet, situs taruhan dengan odds terbaik di Indonesia, platform taruhan teratas di Indonesia, platform taruhan Liga Inggris Indonesia">
+        content="{{ $settings->meta_keywords ?? 'Taruhan olahraga Indonesia, taruhan online Indonesia, taruhan sepak bola Indonesia, Spotbet...' }}">
+
+    @if ($settings && $settings->site_favicon)
+        <link rel="icon" href="{{ asset('storage/' . $settings->site_favicon) }}" type="image/x-icon">
+    @endif
+
+    @if ($settings && $settings->site_logo)
+        <link rel="icon" href="{{ asset('storage/' . $settings->site_logo) }}" type="image/x-icon">
+    @endif
     <link rel="stylesheet" href="{{ asset('frontend/desktop/style-DU9jrg1b.css') }}">
     <style>
         .hidden {
-    display: none;
-}
-
+            display: none;
+        }
     </style>
     <style id="varlet-style-vars">
         :root:root {
@@ -239,20 +252,33 @@
                     <div class="w-full px-20">
                         <div class="flex items-end justify-between b-b-1 b-b-#EDEDED b-b-solid pb-20 pt-20">
                             <div>
-                                <div class="flex items-center"><img class="h-70 w-70"
-                                        src="https://www.7spb1772.com/assets/image/logo.png" alt="spotbet">
-                                    <div class="ml-20 text-27 font-bold italic">SpotBet</div>
+                                @php
+                                    $settings = \App\Models\GeneralSetting::first(); // Ambil pengaturan pertama
+                                @endphp
+
+                                <div class="flex items-center">
+                                    @if ($settings && $settings->site_logo)
+                                        <img class="h-70 w-70" src="{{ asset('storage/' . $settings->site_logo) }}"
+                                            alt="logo">
+                                    @else
+                                        <img class="h-70 w-70" src="https://www.7spb1772.com/assets/image/logo.png"
+                                            alt="spotbet">
+                                    @endif
+                                    <div class="ml-20 text-27 font-bold italic">{{ $settings->site_title ?? 'SpotBet' }}
+                                    </div>
                                 </div>
-                                <div class="mt-10 text-14 color-text-sub">Kasino Kripto
-                                    Berprestasi.SpotBet berfokus pada pemain dan memenuhi kebutuhan jutaan penjudi
-                                    global.Kami memastikan pengalaman berjudi yang abadi dan penuh hiburan bagi para
-                                    pemain.</div>
+
+                                <div class="mt-10 text-14 color-text-sub">
+                                    Kasino Kripto Berprestasi. SpotBet berfokus pada pemain dan memenuhi kebutuhan jutaan penjudi global. Kami memastikan pengalaman berjudi yang abadi dan penuh hiburan bagi para pemain.
+                                </div>
                             </div>
                         </div>
+
                         <div class="h-80 flex flex-col items-center justify-center text-center text-14 color-text-sub">
                             <div>Hak Cipta ©2024 Maysit. Semua Hak Dilindungi.</div>
                         </div>
                     </div>
+
                     <div class="fixed bottom-[16px] right-[10px] z-100 pb-70">
                         <div class="btn-onservice h-[50px] w-[50px] flex cursor-pointer items-center justify-center rd-50"
                             style="box-shadow: rgba(170, 181, 199, 0.3) 0px 4px 10px;background: #FFF;">
@@ -260,155 +286,12 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div></div>
         </div>
     </div>
 
-    <div class="var--box var-popup" style="z-index: 1998; display: none;">
-        <div class="var-popup__overlay" style="z-index: 1999;"></div>
-        <div class="var-popup__content var-popup--center var-popup--content-background-color var-elevation--3 rounded-t-30 pt-40 bg-transparent shadow-none"
-            role="dialog" aria-modal="true" style="z-index: 2000; display: none;"></div>
-    </div>
-    <div class="var-menu__menu var--box var-menu--menu-background-color var-elevation--3"
-        style="z-index: 2000; display: none; position: absolute; left: 0px; top: 0px; margin: 0px;">
-        <div class="">
-            <div class="absolute left-0 w-100% h-20 top-[-20px]">
-                <div class="ver-menu-triangle" style="left: unset; right: 50px;"></div>
-            </div>
-            <div class="app-setting w-340 p-20 text-14">
-                <div class="mb-20 flex b-b-1 b-b-border b-b-solid pb-12">
-                    <div class="w-130 flex-shrink-0 pr-20 text-right">Pengaturan platform</div>
-                    <div>
-                        <div class="var-radio-group__wrap">
-                            <div class="var-radio-group var-radio-group--horizontal">
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--checked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-marked var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Odds indonesia</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--unchecked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-blank var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Odds eropa</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--unchecked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-blank var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Odds hongkong</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--unchecked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-blank var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Odds malaysia</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--unchecked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-blank var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Odds amerika</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="w-130 flex-shrink-0 pr-20 text-right">Pengaturan taruhan</div>
-                    <div>
-                        <div class="var-radio-group__wrap">
-                            <div class="var-radio-group var-radio-group--horizontal">
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--checked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-marked var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Menerima otomatis peluang yang lebih baik
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--unchecked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-blank var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Menerima otomatis peluang apa pun</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-8 w-full">
-                                    <div class="var-radio__wrap">
-                                        <div class="var-radio">
-                                            <div class="var-radio__action var-radio--unchecked" tabindex="0"><i
-                                                    class="var-icon var-icon--set var-icon-radio-blank var-radio__icon"
-                                                    var-radio-cover="" style="transition-duration: 0ms;"></i>
-                                                <div class="var-hover-overlay"></div>
-                                            </div>
-                                            <div class="var-radio__text">Tidak menerima perubahan peluang apa pun</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="var-menu__menu var--box var-menu--menu-background-color var-elevation--3"
-        style="z-index: 2000; display: none; position: absolute; left: 0px; top: 0px; margin: 0px;">
-        <div class="box-border px-6 py-10">
-            <div class="absolute left-0 w-100% h-20 top-[-20px]">
-                <div class="ver-menu-triangle" style="left: unset; right: 10px;"></div>
-            </div>
-            <div><button
-                    class="var-button var--box var-button--normal var--inline-flex var-button--text var-button--text-primary w-full"
-                    type="button">
-                    <div class="var-button__content">Indonesian</div>
-                    <div class="var-hover-overlay"></div>
-                </button></div>
-        </div>
-    </div>
     <div class="var--box var-popup" style="z-index: 1998; display: none;">
         <div class="var-popup__overlay" style="z-index: 1999;"></div>
         <div class="var-popup__content var-popup--center var-popup--content-background-color var-elevation--3 h-640 w-800 rounded-8px"
@@ -465,31 +348,6 @@
 
     <!-- Masuk Modal (Login Modal) -->
     <div id="masukModal" class="modal">
-        {{-- <div class="modal-content">
-            <span class="close" onclick="closeModal('masuk')">&times;</span>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img src="https://c.wallhere.com/images/f2/ae/7d19f4ec6a4f6609c624a0d8e9f9-2284554.png!d"
-                        alt="Register Image">
-                </div>
-                <div class="modal-form">
-                    <h2>Masuk</h2>
-                    <form id="registerForm" action="{{ route('user.login.process') }}" method="POST">
-                        @csrf
-                        <input type="text" name="username" placeholder="Username" value="{{ old('username') }}"
-                            required class="input-field">
-                        @error('username')
-                            <div class="error">{{ $message }}</div>
-                        @enderror
-                        <input type="password" name="password" placeholder="Password" required class="input-field">
-                        @error('password')
-                            <div class="error">{{ $message }}</div>
-                        @enderror
-                        <button type="submit" class="btn-submit">Masuk</button>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
 
         <div class="var--box var-popup" style="z-index: 2001;">
             <div class="var-popup__overlay" style="z-index: 2002;"></div>
@@ -803,8 +661,8 @@
         });
 
         document.getElementById('closeModalButton').addEventListener('click', function() {
-        document.getElementById('depositModal').classList.add('hidden');
-    });
+            document.getElementById('depositModal').classList.add('hidden');
+        });
     </script>
 
     @yield('desktop_scripts')

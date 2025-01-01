@@ -2,10 +2,20 @@
     style="padding: 5px;background: #191D26; border: 1px solid #232A34; top: 0;">
     <div class="w-[var(--menu-width)] pr-10">
         <div class="h-48 rd-24">
-            <img class="mr-20 h-40 w-106 cursor-pointer"
-                src="https://playdash77.com/content/uploads/icons/IGSGP/Vector.svg" alt="logo">
+            @php
+                $settings = \App\Models\GeneralSetting::first(); // Mengambil data pengaturan pertama
+            @endphp
+            
+            @if($settings && $settings->site_logo)
+                <img class="mr-20 h-40 w-106 cursor-pointer"
+                    src="{{ asset('storage/' . $settings->site_logo) }}" alt="logo">
+            @else
+                <img class="mr-20 h-40 w-106 cursor-pointer"
+                    src="https://playdash77.com/content/uploads/icons/IGSGP/Vector.svg" alt="logo">
+            @endif
         </div>
     </div>
+    
     <style>
         .menu {
             display: flex;
@@ -90,7 +100,7 @@
                 <span class="menu-label my-bets-label">My Bets</span>
             </a>
 
-            <a class="menu-button">
+            <a href="{{ route('casino.slots') }}" class="menu-button">
                 <span class="icon-container my-bets-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">

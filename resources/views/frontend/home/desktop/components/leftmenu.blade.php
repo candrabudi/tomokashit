@@ -34,9 +34,10 @@
                         <div class="text-14">Favorit Saya</div>
                     </div>
                 </div>
-                <div class="group h-48 w-full pl-12 pr-15 hover:bg-[var(--menu-hover-bg-color)] bg-[var(--menu-unactived-bg-color)] cursor-pointer"
+                <div
+                    class="group h-48 w-full pl-12 pr-15 hover:bg-[var(--menu-hover-bg-color)] bg-[var(--menu-unactived-bg-color)] cursor-pointer"
                     style="background: #232A34; color: #FFFFFF;">
-                    <div class="h-full flex items-center">
+                    <a href="{{ route('casino.slots') }}" class="h-full flex items-center">
 
                         <svg id="Bet_slip_icon"
                             class="mr-12 h-20 w-20 transition-all group-hover:h-26 group-hover:w-26 op-50"
@@ -50,8 +51,8 @@
                                     transform="translate(2.01 2.009)" fill="#FFFFFF" />
                             </g>
                         </svg>
-                        <div class="text-14">Slip taruhan</div>
-                    </div>
+                        <div class="text-14">Slots</div>
+                    </a>
                 </div>
                 <div class="group h-48 w-full pl-12 pr-15 hover:bg-[var(--menu-hover-bg-color)] bg-[var(--menu-unactived-bg-color)] cursor-pointer"
                     style="background: #232A34; color: #FFFFFF;">

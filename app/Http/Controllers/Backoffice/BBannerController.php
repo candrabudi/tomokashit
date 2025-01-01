@@ -26,11 +26,12 @@ class BBannerController extends Controller
             'banner_status' => 'required|in:enable,disable'
         ]);
 
+        // Store image in the 'public/banners' folder
         $imagePath = $request->file('image')->store('banners', 'public');
 
         Banner::create([
             'banner_name' => $request->banner_name,
-            'image' => asset('storage/'.$imagePath),
+            'image' => asset('storage/' . $imagePath),
             'url_redirect' => $request->url_redirect,
             'banner_status' => $request->banner_status,
         ]);
@@ -50,10 +51,13 @@ class BBannerController extends Controller
             'banner_status' => 'required|in:aktif,nonaktif'
         ]);
 
+        // If a new image is uploaded, delete the old one and store the new one
         if ($request->hasFile('image')) {
-            // Storage::disk('public')->delete($banner->image);
-            $imagePath = asset('storage/'.$request->file('image')->store('banners', 'public'));
-            $banner->image = $imagePath;
+            if (Storage::disk('public')->exists(str_replace(asset('storage/'), '', $banner->image))) {
+                Storage::disk('public')->delete(str_replace(asset('storage/'), '', $banner->image));
+            }
+            $imagePath = $request->file('image')->store('banners', 'public');
+            $banner->image = asset('storage/' . $imagePath);
         }
 
         $banner->update([
@@ -69,7 +73,12 @@ class BBannerController extends Controller
     public function destroy($id)
     {
         $banner = Banner::findOrFail($id);
-        // Storage::disk('public')->delete($banner->image);
+
+        // Delete the banner image from storage
+        if (Storage::disk('public')->exists(str_replace(asset('storage/'), '', $banner->image))) {
+            Storage::disk('public')->delete(str_replace(asset('storage/'), '', $banner->image));
+        }
+
         $banner->delete();
 
         return redirect()->route('system.banners.index')->with('success', 'Banner deleted successfully');

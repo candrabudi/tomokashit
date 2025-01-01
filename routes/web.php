@@ -3,9 +3,14 @@
 use App\Http\Controllers\Backoffice\BAuthController;
 use App\Http\Controllers\Backoffice\BBannerController;
 use App\Http\Controllers\Backoffice\BDashboardController;
+use App\Http\Controllers\Backoffice\BGeneralSettingController;
 use App\Http\Controllers\Backoffice\BMemberController;
 use App\Http\Controllers\Backoffice\BPaymentAccountController;
 use App\Http\Controllers\Backoffice\BPaymentMethodController;
+use App\Http\Controllers\Backoffice\BProfileController;
+use App\Http\Controllers\Backoffice\BPromotionController;
+use App\Http\Controllers\Backoffice\BUserManagementController;
+use App\Http\Controllers\Backoffice\ReportTransactionController;
 use App\Http\Controllers\Frontend\FAuthController;
 use App\Http\Controllers\Frontend\FDepositController;
 use App\Http\Controllers\Frontend\FHomeController;
@@ -138,4 +143,34 @@ Route::middleware(['auth', 'role:admin,superadmin'])->prefix('system/members')->
     Route::get('banners/{id}/edit', [BBannerController::class, 'edit'])->name('system.banners.edit');
     Route::put('banners/{id}', [BBannerController::class, 'update'])->name('system.banners.update');
     Route::delete('banners/{id}', [BBannerController::class, 'destroy'])->name('system.banners.destroy');
+});
+
+Route::middleware(['auth', 'role:superadmin'])->prefix('system')->name('system.')->group(function () {
+    Route::get('settings', [BGeneralSettingController::class, 'index'])->name('settings.index');
+    Route::put('settings', [BGeneralSettingController::class, 'update'])->name('settings.update');
+});
+
+Route::middleware(['auth', 'role:admin,superadmin'])->prefix('system')->name('system.')->group(function () {
+    Route::get('/profile', [BProfileController::class, 'index'])->name('profile.index');
+    Route::post('/profile/update', [BGeneralSettingController::class, 'update'])->name('profile.update');
+});
+
+Route::middleware(['auth', 'role:superadmin'])->prefix('system')->name('system.')->group(function () {
+    Route::get('promotion', [BPromotionController::class, 'index'])->name('promotion.index');
+
+    Route::get('promotion/create', [BPromotionController::class, 'create'])->name('promotion.create');
+
+    Route::post('promotion', [BPromotionController::class, 'store'])->name('promotion.store');
+    Route::post('promotion/{promotion}', [BPromotionController::class, 'update'])->name('promotion.update');
+    Route::get('promotion/detail/{promotion}', [BPromotionController::class, 'edit'])->name('promotion.edit');
+
+    Route::delete('promotion/{promotion}', [BPromotionController::class, 'destroy'])->name('promotion.destroy');
+
+    Route::get('/transaction/report', [ReportTransactionController::class, 'index'])->name('transaction.report');
+
+
+    Route::get('users/management', [BUserManagementController::class, 'index'])->name('users.management');
+    Route::post('users/management', [BUserManagementController::class, 'store'])->name('users.management.store');
+    Route::put('users/management/{a}', [BUserManagementController::class, 'update'])->name('users.management.update');
+    Route::delete('users/management/{a}', [BUserManagementController::class, 'destroy'])->name('users.management.destroy');
 });

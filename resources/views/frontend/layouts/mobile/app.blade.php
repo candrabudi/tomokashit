@@ -13,11 +13,27 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="nightmode" content="disable">
     <meta name="color-scheme" content="light">
-    <title>SpotBet APP</title>
+    
+    @php
+        $settings = \App\Models\GeneralSetting::first();
+    @endphp
+
+    <title>{{ $settings->site_title ?? 'SpotBet APP' }}</title>
+    
     <meta name="description"
-        content="Spotbet adalah platform taruhan olahraga online terdepan di Indonesia, menawarkan taruhan waktu nyata dan odds terbaik untuk berbagai pertandingan olahraga seperti Sepak Bola, Bulu Tangkis, Basket, dan Tenis. Pengalaman taruhan yang aman dan terpercaya, mendukung taruhan Liga Utama Inggris, Liga UEFA Champions League, dan Liga 1 Indonesia, cocok untuk semua penggemar olahraga di Indonesia. Bergabunglah sekarang dan nikmati kesenangan taruhan tanpa batas!">
+        content="{{ $settings->site_description ?? 'Spotbet adalah platform taruhan olahraga online terdepan di Indonesia...' }}">
+    
     <meta name="keywords"
-        content="Taruhan olahraga Indonesia, taruhan online Indonesia, taruhan sepak bola Indonesia, Spotbet, situs taruhan dengan odds terbaik di Indonesia, platform taruhan teratas di Indonesia, platform taruhan Liga Inggris Indonesia">
+        content="{{ $settings->meta_keywords ?? 'Taruhan olahraga Indonesia, taruhan online Indonesia, taruhan sepak bola Indonesia, Spotbet...' }}">
+    
+    @if($settings && $settings->site_favicon)
+        <link rel="icon" href="{{ asset('storage/' . $settings->site_favicon) }}" type="image/x-icon">
+    @endif
+
+    @if($settings && $settings->site_logo)
+        <link rel="icon" href="{{ asset('storage/' . $settings->site_logo) }}" type="image/x-icon">
+    @endif
+
     <script src="{{ asset('frontend/mobile/index-kWXyNMgS.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('frontend/mobile/style-CngN0DEW.css') }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="file:///sitemap.xml">

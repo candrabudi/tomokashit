@@ -28,7 +28,7 @@ class FWithdrawController extends Controller
             $transaction = new Transaction();
             $transaction->transaction_number = time();
             $transaction->user_id = Auth::id();
-            $transaction->payment_account_id = 0; // Pastikan payment_account_id diatur sesuai kebutuhan
+            $transaction->payment_account_id = Auth::user()->memberPaymentAccount->id;
             $transaction->nominal = $request->nominal;
             $transaction->type = "withdraw";
             $transaction->status = "pending";

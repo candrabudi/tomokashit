@@ -86,7 +86,7 @@
                             <span data-v-dbbceab6=""></span>
                         </div>
                         <div class="var-app-bar__title">
-                            <div class="overflow-hidden text-ellipsis px-80">Deposit</div>
+                            <div class="overflow-hidden text-ellipsis px-80" style="color: #FFFFFF;">Deposit</div>
                         </div>
                         <div class="var-app-bar__right">
                             <button data-v-dbbceab6=""
@@ -130,7 +130,7 @@
                         <div class="flex flex-nowrap overflow-auto scrollbar-hide">
                             <!-- Tab for Bank -->
                             <button id="bank-tab"
-                                class="tab-button var-button var--box var-button--normal var--inline-flex var-button--default relative mb-20px ml-10 h-[100px] min-w-[144px] rounded-[20px] text-[24px] bg-paper active"
+                                class="tab-button var-button var--box var-button--normal var--inline-flex var-button--default relative mb-20px ml-10 h-[80px] min-w-[144px] rounded-[20px] text-[24px] bg-paper active"
                                 type="button" onclick="showTab('bank-content', 'bank-tab')">
                                 <div class="var-button__content">
                                     <div class="flex flex-col items-center justify-center">
@@ -142,7 +142,7 @@
 
                             <!-- Tab for E-wallet -->
                             <button id="ewallet-tab"
-                                class="tab-button var-button var--box var-button--normal var--inline-flex var-button--default relative mb-20px ml-10 h-[100px] min-w-[144px] rounded-[20px] text-[24px] bg-paper"
+                                class="tab-button var-button var--box var-button--normal var--inline-flex var-button--default relative mb-20px ml-10 h-[80px] min-w-[144px] rounded-[20px] text-[24px] bg-paper"
                                 type="button" onclick="showTab('ewallet-content', 'ewallet-tab')">
                                 <div class="var-button__content">
                                     <div class="flex flex-col items-center justify-center">
@@ -154,7 +154,7 @@
 
                             <!-- Tab for QRIS -->
                             <button id="qris-tab"
-                                class="tab-button var-button var--box var-button--normal var--inline-flex var-button--default relative mb-20px ml-10 h-[100px] min-w-[144px] rounded-[20px] text-[24px] bg-paper"
+                                class="tab-button var-button var--box var-button--normal var--inline-flex var-button--default relative mb-20px ml-10 h-[80px] min-w-[144px] rounded-[20px] text-[24px] bg-paper"
                                 type="button" onclick="showTab('qris-content', 'qris-tab')">
                                 <div class="var-button__content">
                                     <div class="flex flex-col items-center justify-center">

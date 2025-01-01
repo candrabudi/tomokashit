@@ -10,34 +10,34 @@
             <img class="ml-16px h-108px w-114px" 
                 src="{{ asset('storage/' . $settings->site_logo) }}" alt="home">
         </div>
-        <button class="var-bottom-navigation-item var--box" id="deposit-btn">
+        <a href="{{ route('user.my_account.deposit') }}" class="var-bottom-navigation-item var--box" id="deposit-btn">
             <div class="var-bottom-navigation-item__icon-container">
                 <img class="h-44px w-44px"
                     src="{{ asset('frontend/mobile/icon/tabbar/depositb73c.png') }}?t=1" alt="deposit">
             </div>
             <span class="var-bottom-navigation-item__label">Deposit</span>
-        </button>
-        <button class="var-bottom-navigation-item var--box" id="taruhan-btn">
+        </a>
+        <a href="/" class="var-bottom-navigation-item var--box" id="taruhan-btn">
             <div class="var-bottom-navigation-item__icon-container">
                 <img class="h-44px w-44px"
                     src="{{ asset('frontend/mobile/icon/tabbar/orderb73c.png') }}?t=1" alt="betSlip">
             </div>
             <span class="var-bottom-navigation-item__label">Taruhan</span>
-        </button>
-        <button class="var-bottom-navigation-item var--box">
+        </a>
+        <a class="var-bottom-navigation-item var--box">
             <div class="var-bottom-navigation-item__icon-container">
                 <img class="h-44px w-44px"
                     src="{{ asset('frontend/mobile/icon/tabbar/serviceb73c.png') }}?t=1" alt="service">
             </div>
             <span class="var-bottom-navigation-item__label">CS</span>
-        </button>
-        <button class="var-bottom-navigation-item var--box" id="profil-btn">
+        </a>
+        <a href="{{ route('users.profile') }}" class="var-bottom-navigation-item var--box" id="profil-btn">
             <div class="var-bottom-navigation-item__icon-container">
                 <img class="h-44px w-44px"
                     src="{{ asset('frontend/mobile/icon/tabbar/mineb73c.png') }}?t=1" alt="mine">
             </div>
             <span class="var-bottom-navigation-item__label">Profil</span>
-        </button>
+        </a>
     </div>
 </div>
 

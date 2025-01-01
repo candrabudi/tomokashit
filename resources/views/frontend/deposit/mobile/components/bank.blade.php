@@ -1,31 +1,37 @@
-<form data-v-5cbf7a2e="" class="var-form relative mb-150px" method="POST" action="{{ route('user.my_account.deposit.store') }}">
+<form data-v-5cbf7a2e="" class="var-form relative mb-150px" method="POST"
+    action="{{ route('user.my_account.deposit.store') }}">
     @csrf <!-- CSRF Token for protection -->
     <div data-v-5cbf7a2e="" class="var-space var--box" style="flex-flow: column wrap; justify-content: flex-start;">
         <div class="var-space--auto" style="margin: 0px 0px 10px;">
             <div data-v-5cbf7a2e="" class="ver-select">
                 <div class="h-[48px] flex items-center justify-between font-size-[22px]">
-                    <span class="ml-[var(--form-details-message-margin-right)] color-text">
-                        <span class="color-[#FF0000]">*</span>Silakan pilih kartu bank
+                    <span class="ml-[var(--form-details-message-margin-right)] color-text" style="color: #FFFF">
+                        <span class="color-[#FF0000]" style="color: #FFFF">*</span>Silakan pilih kartu bank
                     </span>
                 </div>
-                <div class="var-input var--box bg_paper">
-                    <div class="var-field-decorator var--box var-field-decorator--outlined">
-                        <div class="var-field-decorator__controller" style="overflow: hidden;">
-                            <div class="var-field-decorator__middle var-field-decorator--middle-non-hint">
-                                <input class="var-input__input" autocomplete="new-password" readonly=""
-                                    type="text" placeholder="Silakan pilih kartu bank" id="bankSelector" name="payment_id" required>
+                <div class="var-input var--box">
+                    <div class="var-field-decorator var--box" style="color: #FFFF">
+                        <fieldset class="var-field-decorator__line" style="border-radius: 8px;">
+                            <div class="var-field-decorator__controller" style="overflow: hidden;">
+                                <div class="var-field-decorator__middle var-field-decorator--middle-non-hint">
+                                    <input class="var-input__input" autocomplete="new-password" readonly=""
+                                        type="text" placeholder="Silakan pilih kartu bank" id="bankSelector" required
+                                        style="color: #FFFF">
+                                    <input type="hidden" id="paymentID" name="payment_id">
+                                </div>
+                                <div class="var-field-decorator__icon var-field-decorator--icon-non-hint">
+                                    <i class="var-icon var-icon--set var-icon-menu-down"></i>
+                                </div>
                             </div>
-                            <div class="var-field-decorator__icon var-field-decorator--icon-non-hint">
-                                <i class="var-icon var-icon--set var-icon-menu-down"></i>
-                            </div>
-                        </div>
-                        <fieldset class="var-field-decorator__line"></fieldset>
+                        </fieldset>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="selectedBankDetails" class="mt-[20px] text-[22px] font-[500] mb-10"></div>
+        <div id="selectedBankDetails" class="mt-[20px] text-[22px] font-[500] mb-10" style="margin-bottom: 20px;">
+
+        </div>
 
         <div id="bankModal" class="var--box var-popup" style="z-index: 2004; display: none;">
             <div class="var-popup__overlay" style="z-index: 2005;"></div>
@@ -34,7 +40,7 @@
                     <div class="flex justify-between">
                         <div class="text-[36px] font-500 line-height-[54px]">Silakan pilih kartu bank</div>
                         <div class="font-size-[0]">
-                            <img class="h-[54px] w-[54px]" src="/assets/icon/icon_close.svg" id="closeModal">
+                            <img class="h-[54px] w-[54px]" src="https://m.7spb1772.com/assets/icon/icon_close.svg" id="closeModal">
                         </div>
                     </div>
                     <div class="ver-input py-[20px]">
@@ -66,8 +72,7 @@
                 </div>
                 <div class="var-input var--box placeholder:font-normal bg_paper">
                     <div class="var-field-decorator var--box var-field-decorator--outlined">
-                        <div class="var-field-decorator__controller"
-                            style="cursor: text; overflow: hidden;">
+                        <div class="var-field-decorator__controller" style="cursor: text; overflow: hidden;">
                             <div class="var-field-decorator__icon var-field-decorator--icon-non-hint"></div>
                             <div class="var-field-decorator__middle var-field-decorator--middle-non-hint">
                                 <input id="deposit-amount" class="var-input__input" autocomplete="new-password"
@@ -76,7 +81,6 @@
                             </div>
                             <div class="var-field-decorator__icon var-field-decorator--icon-non-hint"></div>
                         </div>
-                        <fieldset class="var-field-decorator__line"></fieldset>
                     </div>
                 </div>
                 <div class="absolute bottom-20px left-30px w-[calc(100%-60px)]">
@@ -92,7 +96,8 @@
         </div>
 
         <div class="var-space--auto" style="margin: 0px;">
-            <div data-v-5cbf7a2e="" class="flex items-center justify-between rounded-20px bg-[#e5f5ec] px-30px py-20px">
+            <div data-v-5cbf7a2e=""
+                class="flex items-center justify-between rounded-20px bg-[#e5f5ec] px-30px py-20px">
                 <img data-v-5cbf7a2e="" src="https://m.7spb1772.com/assets/icon/safety2.png" class="h-50px w-50px">
                 <div data-v-5cbf7a2e="" class="ml-36px text-24px color-[#0AD664]">Anda akan diarahkan ke situs pihak
                     ketiga yang terverifikasi oleh Spotbet, untuk mendapatkan pengalaman setoran yang aman dan
@@ -101,17 +106,17 @@
         </div>
     </div>
 
-    <div data-v-5cbf7a2e="" class="fixed bottom-[calc(100px+env(safe-area-inset-bottom))] z-100 w-[calc(100%-40px)] bg-body" style="margin-bottom: 50px; background: #232A34">
-        <button data-v-5cbf7a2e="" class="var-button var--box var-button--normal var--inline-flex var-button--primary mt-[20px] h-[90px] w-full rounded-[10px] text-[28px]" type="submit">
-            <div class="var-button__content">Langkah selanjutnya</div>
-            <div class="var-hover-overlay"></div>
-        </button>
-    </div>
+
+    <button data-v-5cbf7a2e=""
+        class="var-button var--box var-button--normal var--inline-flex var-button--primary mt-[20px] h-[90px] w-full rounded-[10px] text-[28px]"
+        type="submit">
+        <div class="var-button__content">Langkah selanjutnya</div>
+        <div class="var-hover-overlay"></div>
+    </button>
 </form>
 
 
 <style>
-
     #bankModal {
         position: fixed;
         bottom: -100%;
@@ -123,6 +128,7 @@
     #bankModal.show {
         bottom: 0;
     }
+
     .var-popup__overlay {
         position: fixed;
         top: 0;
@@ -134,10 +140,9 @@
     }
 
     #selectedBankDetails {
-        background-color: #2c2c2c;
+        background-color: #191D26;
         border-radius: 8px;
         padding: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         margin-top: 20px;
     }
 
@@ -207,7 +212,8 @@
             </div>
         `;
 
-            document.getElementById('bankSelector').value = paymentID;
+            document.getElementById('bankSelector').value = bankName;
+            document.getElementById('paymentID').value = paymentID;
 
             document.getElementById('copyAccountNumber').addEventListener('click', function() {
                 copyToClipboard(accountNumber);
@@ -234,37 +240,3 @@
         alert('Nomor akun berhasil disalin!');
     }
 </script>
-
-{{-- <script>
-    const buttons = document.querySelectorAll('button[data-amount]');
-    const input = document.getElementById('deposit-amount');
-
-    const MIN_AMOUNT = 50000;
-    const MAX_AMOUNT = 10000000;
-
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const amount = button.getAttribute('data-amount');
-            input.value = amount;
-            validateAmount(amount);
-        });
-    });
-
-    input.addEventListener('input', () => {
-        const amount = parseInt(input.value.replace(/[^0-9]/g, ''));
-        if (amount) {
-            validateAmount(amount);
-        }
-    });
-
-    function validateAmount(amount) {
-        if (amount < MIN_AMOUNT) {
-            alert(`Minimal deposit is IDR ${MIN_AMOUNT.toLocaleString()}`);
-            input.value = '';
-        } else if (amount > MAX_AMOUNT) {
-            alert(`Maximum deposit is IDR ${MAX_AMOUNT.toLocaleString()}`);
-            input.value = '';
-        }
-    }
-</script> --}}
-

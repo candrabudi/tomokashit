@@ -21,7 +21,7 @@ class FPaymentAccountController extends Controller
         }
         $paymentMethods = PaymentMethod::where('payment_status', 1)
             ->get();
-        return view('frontend.bank.index', compact('paymentMethods'));
+        return view('frontend.payment.index', compact('paymentMethods'));
     }
 
     public function store(Request $request)

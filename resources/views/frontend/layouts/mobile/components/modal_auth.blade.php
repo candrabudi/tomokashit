@@ -75,6 +75,26 @@
                     <!-- Username Input -->
                     <div class="ver-input">
                         <div class="h-[48px] flex items-center justify-between font-size-[22px]">
+                            <span class="color-text">Silakan masukan nama lengkap</span>
+                        </div>
+                        <div class="var-input var--box bg_body">
+                            <div class="var-field-decorator var--box var-field-decorator--outlined">
+                                <div class="var-field-decorator__controller">
+                                    <div class="var-field-decorator__middle">
+                                        <input class="var-input__input" name="full_name" autocomplete="new-password"
+                                            type="text" placeholder="Akun harus terdiri dari 6-16 karakter"
+                                            value="{{ old('full_name') }}">
+                                        @error('full_name')
+                                            <div class="error">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ver-input">
+                        <div class="h-[48px] flex items-center justify-between font-size-[22px]">
                             <span class="color-text">Silakan masukan akun anda</span>
                         </div>
                         <div class="var-input var--box bg_body">

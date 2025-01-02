@@ -31,7 +31,7 @@
     @endif
 
     @if($settings && $settings->site_logo)
-        <link rel="icon" href="{{ asset('storage/' . $settings->site_logo) }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('storage/' . $settings->site_favicon) }}" type="image/x-icon">
     @endif
 
     <script src="{{ asset('frontend/mobile/index-kWXyNMgS.js') }}"></script>

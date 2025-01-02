@@ -7,7 +7,7 @@
     <div class="var-bottom-navigation var--box var-bottom-navigation--fixed var-bottom-navigation--safe-area"
         style="z-index: 1000; background: #191D26">
         <div class="ml-12px h-full flex flex-1 items-center justify-start">
-            <img class="ml-16px h-108px w-114px" 
+            <img class="ml-16px w-114px" 
                 src="{{ asset('storage/' . $settings->site_logo) }}" alt="home">
         </div>
         <a href="{{ route('user.my_account.deposit') }}" class="var-bottom-navigation-item var--box" id="deposit-btn">

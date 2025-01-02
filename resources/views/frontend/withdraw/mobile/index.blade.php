@@ -159,7 +159,8 @@
                                                             data-v-d1b2a473="" class="color-[#FF0000]">*</span>Rekening
                                                         Deposit</span>
                                                 </div>
-                                                <button data-v-d1b2a473=""
+                                                <a href="{{ route('user.my_account.payment_account') }}"
+                                                    data-v-d1b2a473=""
                                                     class="var-button var--box var-button--normal var--inline-flex var-button--default h-[90px] w-full rounded-[10px] bg-paper text-[28px]"
                                                     type="button">
                                                     <div class="var-button__content"><i data-v-d1b2a473=""
@@ -167,7 +168,7 @@
                                                             style="transition-duration: 0ms;"></i><span data-v-d1b2a473=""
                                                             class="leading-[1]">Tambah rekening</span></div>
                                                     <div class="var-hover-overlay"></div>
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     @endif

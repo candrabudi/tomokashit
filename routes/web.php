@@ -13,6 +13,8 @@ use App\Http\Controllers\Backoffice\BUserManagementController;
 use App\Http\Controllers\Backoffice\ReportTransactionController;
 use App\Http\Controllers\Frontend\FAuthController;
 use App\Http\Controllers\Frontend\FDepositController;
+use App\Http\Controllers\Frontend\FHistoryBalanceController;
+use App\Http\Controllers\Frontend\FHistoryBettingController;
 use App\Http\Controllers\Frontend\FHomeController;
 use App\Http\Controllers\Frontend\FPaymentAccountController;
 use App\Http\Controllers\Frontend\FProfileController;
@@ -61,6 +63,9 @@ Route::get('/my-account/payment', [FPaymentAccountController::class, 'index'])->
 Route::post('/my-account/payment/store', [FPaymentAccountController::class, 'store'])->name('user.my_account.payment_account.store');
 
 Route::get('/menu', [MenuMobileController::class, 'index'])->name('menu.mobile.index');
+
+Route::get('/my-account/history-transaction', [FHistoryBalanceController::class, 'index'])->name('user.my_account.history_balance');
+Route::get('/my-account/history-betting', [FHistoryBettingController::class, 'index'])->name('user.my_account.history_betting');
 
 Route::get('/system/login', [BAuthController::class, 'login'])->name('system.login');
 Route::post('/system/login/process', [BAuthController::class, 'loginProcess'])->name('system.login.process');

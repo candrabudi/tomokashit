@@ -31,7 +31,7 @@
                         <div class="relative mx-[20px]">
                             <div class="var-image var--box h-[150px] w-[150px] rounded-full overflow-hidden bg-gray-800">
                                 <img role="img" class="var-image__image"
-                                    src="https://m.7spb1772.com/assets/icon/avatar/avatar.png" style="object-fit: cover;">
+                                    src="https://cdn-icons-png.flaticon.com/512/149/149071.png" style="object-fit: cover;">
                             </div>
                             <span><img class="var-icon var-icon--set var-icon__image absolute bottom-0 right-0"
                                     src="https://m.7spb1772.com/assets/icon/edit_pen.svg"
@@ -39,7 +39,7 @@
                         </div>
                         <div class="mx-4 text-white">
                             <div class="text-2xl font-bold leading-tight">shenneal</div>
-                            <div class="mt-2 text-lg opacity-70">ID 136535</div>
+                            <div class="mt-2 text-lg opacity-70">ID {{ Auth::user()->id }}</div>
                         </div>
                     </div>
                     <div style="color: var(--color-text);" style="margin-bottom: 20px;">
@@ -90,37 +90,37 @@
                         <div class="mt-[30px] flex flex-wrap justify-between">
                             <div class="var-row var--box"
                                 style="justify-content: flex-start; align-items: flex-start; margin: 0px;">
-                                <div class="var-col var--box var-col--span-6"
-                                    style="flex-direction: row; justify-content: center; padding: 0px;width: 120px; height: 100px;">
+                                <a href="{{ route('user.my_account.history_balance') }}" class="var-col var--box var-col--span-6"
+                                    style="flex-direction: row; justify-content: center; padding: 0px;width: 120px; height: 100px; text-decoration: none; font-size: 18px;">
                                     <div
                                         class="var-paper var--box var-paper--cursor relative mb-[20px] w-[140px] items-center px-5px py-20px text-center">
                                         <img src="https://m.7spb1772.com/assets/icon/mine/mingxi_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
-                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Riwayat Saldo
                                         </div>
 
                                     </div>
-                                </div>
-                                <div class="var-col var--box var-col--span-6"
+                                </a>
+                                <a href="{{ route('user.my_account.history_betting') }}" class="var-col var--box var-col--span-6"
                                     style="flex-direction: row; justify-content: center; padding: 0px;width: 120px; height: 100px;">
                                     <div
                                         class="var-paper var--box var-paper--cursor relative mb-[20px] w-[140px] items-center px-5px py-20px text-center">
                                         <img src="https://m.7spb1772.com/assets/icon/mine/jilu_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
-                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Catatan Taruhan
                                         </div>
 
                                     </div>
-                                </div>
+                                </a>
                                 <div class="var-col var--box var-col--span-6"
                                     style="flex-direction: row; justify-content: center; padding: 0px;width: 120px; height: 100px;">
                                     <div
                                         class="var-paper var--box var-paper--cursor relative mb-[20px] w-[140px] items-center px-5px py-20px text-center">
                                         <img src="https://m.7spb1772.com/assets/icon/mine/VIP_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
-                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             VIP
                                         </div>
 
@@ -132,7 +132,7 @@
                                         class="var-paper var--box var-paper--cursor relative mb-[20px] w-[140px] items-center px-5px py-20px text-center">
                                         <img src="https://m.7spb1772.com/assets/icon/mine/fuli_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
-                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Kupon
                                         </div>
 
@@ -145,7 +145,7 @@
                                         class="var-paper var--box var-paper--cursor relative mb-[20px] w-[140px] items-center px-5px py-20px text-center">
                                         <img src="https://m.7spb1772.com/assets/icon/mine/anquan_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
-                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                        <div class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Keamanan
                                         </div>
 
@@ -159,25 +159,25 @@
                                         <img src="https://m.7spb1772.com/assets/icon/mine/yijian_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
                                         <div
-                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Saran
                                         </div>
 
                                     </div>
                                 </div>
-                                <div class="var-col var--box var-col--span-6"
+                                {{-- <div class="var-col var--box var-col--span-6"
                                     style="flex-direction: row; justify-content: center; padding: 0px;width: 120px; height: 100px;">
                                     <div
                                         class="var-paper var--box var-paper--cursor relative mb-[20px] w-[140px] items-center px-5px py-20px text-center">
                                         <img src="https://m.7spb1772.com/assets/icon/mine/saiguo_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
                                         <div
-                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Hasil pertandingan
                                         </div>
 
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="var-col var--box var-col--span-6"
                                     style="flex-direction: row; justify-content: center; padding: 0px;width: 120px; height: 100px;">
@@ -186,7 +186,7 @@
                                         <img src="https://m.7spb1772.com/assets/icon/mine/bangzhu_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
                                         <div
-                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Bantuan
                                         </div>
 
@@ -199,7 +199,7 @@
                                         <img src="https://m.7spb1772.com/assets/icon/mine/jiaocheng_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
                                         <div
-                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Panduan bermain
                                         </div>
 
@@ -212,7 +212,7 @@
                                         <img src="https://m.7spb1772.com/assets/icon/mine/guanyu_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
                                         <div
-                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             Informasi
                                         </div>
 
@@ -225,7 +225,7 @@
                                         <img src="https://m.7spb1772.com/assets/icon/mine/v_icon.svg?t=2"
                                             class="mx-auto mb-[15px] block h-[50px] w-[50px]">
                                         <div
-                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-20px">
+                                            class="min-h-[34px] flex items-center justify-center leading-[34px] text-22px" style="color: #222222;">
                                             V1.2.125
                                         </div>
 
